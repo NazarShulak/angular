@@ -9,12 +9,12 @@ import {environment} from "../../environments/environment";
 })
 export class PostService {
 
-  private url = environment.url + '/posts?userId=';
+  private url = environment.url + '/posts';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getPosts(id: number): Observable<PostInterface[]> {
-    return this.httpClient.get<PostInterface[]>(this.url + id);
+  getPosts(): Observable<PostInterface[]> {
+    return this.httpClient.get<PostInterface[]>(this.url);
   }
 }

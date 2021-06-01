@@ -5,8 +5,15 @@ import {AppComponent} from './app.component';
 import {UserComponent} from './components/user/user.component';
 import {UsersComponent} from './components/users/users.component';
 import {HttpClientModule} from "@angular/common/http";
-import { PostComponent } from './components/post/post.component';
-import { PostsComponent } from './components/posts/posts.component';
+import {PostComponent} from './components/post/post.component';
+import {PostsComponent} from './components/posts/posts.component';
+import {NavBarComponent} from './components/nav-bar/nav-bar.component';
+import {RouterModule, Routes} from "@angular/router";
+import {UsersResolver} from "./services/users.resolver";
+
+let roots: Routes = [
+  {path: 'users', component: UsersComponent, resolve: {data: UsersResolver}}
+]
 
 @NgModule({
   declarations: [
@@ -14,11 +21,13 @@ import { PostsComponent } from './components/posts/posts.component';
     UserComponent,
     UsersComponent,
     PostComponent,
-    PostsComponent
+    PostsComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(roots)
   ],
   providers: [],
   bootstrap: [AppComponent]

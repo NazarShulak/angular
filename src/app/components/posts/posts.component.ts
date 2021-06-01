@@ -9,14 +9,13 @@ import {PostService} from "../../services/post.service";
 })
 export class PostsComponent implements OnInit {
   @Input()
-  userId:number;
   posts: PostInterface[];
 
   constructor(private postService: PostService) {
   }
 
   ngOnInit(): void {
-    this.postService.getPosts(this.userId).subscribe(value => {
+    this.postService.getPosts().subscribe(value => {
       this.posts = value
     })
   }
