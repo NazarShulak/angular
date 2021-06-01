@@ -1,16 +1,11 @@
 <div>
   <p>
-   <span>User ID: </span> {{post.userId}}
+    <span>User ID: </span> {{post.userId}}
   </p>
   <p>
-    <span>Post ID: </span>{{post.id}}
+    <span>Post title: </span> {{post.title}}
   </p>
-  <p>
-   <span>Post title: </span> {{post.title}}
-  </p>
-  <p>
-    <span>Post body: </span>{{post.body}}
-  </p>
+  <button (click)="showDetails()">more details</button>
   <hr/>
 
 </div>
