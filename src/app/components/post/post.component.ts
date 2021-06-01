@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PostInterface} from "../../models/Post.interface";
-import {PostService} from "../../services/post.service";
+import {IUser} from "../../models/IUser";
+import {ActivatedRoute, Router} from "@angular/router";
+import {IPost} from "../../models/IPost";
 
 @Component({
   selector: 'app-post',
@@ -10,14 +11,14 @@ import {PostService} from "../../services/post.service";
 export class PostComponent implements OnInit {
 
   @Input()
-  post: PostInterface;
+  post:IPost;
 
-  constructor() {
-  }
+  constructor(private router:Router,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-
   }
 
-
+  showDetails() {
+    this.router.navigate([this.post.id], {relativeTo: this.activatedRoute, state: this.post});
+  }
 }

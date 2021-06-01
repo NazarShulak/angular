@@ -7,20 +7,20 @@ import {
 import {Observable, of} from 'rxjs';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {UserInterface} from "../models/User.interface";
-import {PostInterface} from "../models/Post.interface";
+import {IUser} from "../models/IUser";
+import {IPost} from "../models/IPost";
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostsResolver implements Resolve<PostInterface[]> {
+export class PostsResolver implements Resolve<IPost[]> {
   private url = environment.url + '/posts';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<PostInterface[]> {
-    return this.httpClient.get<PostInterface[]>(this.url)
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IPost[]> | Promise<IPost[]> | IPost[]{
+    return this.httpClient.get<IPost[]>(this.url)
   }
 
 }

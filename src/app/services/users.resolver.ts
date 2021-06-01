@@ -7,21 +7,20 @@ import {
 import { Observable} from 'rxjs';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {UserInterface} from "../models/User.interface";
+import {IUser} from "../models/IUser";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersResolver implements Resolve<UserInterface[]> {
+export class UsersResolver implements Resolve<IUser[]> {
   private url = environment.url +'/users';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):Observable<UserInterface[]>{
-    return this.httpClient.get<UserInterface[]>(this.url)
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IUser[]> | Promise<IUser[]> | IUser[] {
+    return this.httpClient.get<IUser[]>(this.url);
   }
-
 
 
 }
