@@ -6,7 +6,7 @@ import {IUser} from "../models/IUser";
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UserService {
   private url = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private httpClient: HttpClient) {

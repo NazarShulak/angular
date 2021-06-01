@@ -12,13 +12,13 @@ export class UserComponent implements OnInit {
   @Input()
   user: IUser;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor() {
   }
 
   ngOnInit(): void {
   }
-
-  showDetails(): void {
-    this.router.navigate([this.user.id], {relativeTo: this.activatedRoute, state: this.user});
-  }
+  //
+  // showDetails(): void {
+  //   this.router.navigate([this.user.id], {relativeTo: this.activatedRoute});
+  // }
 }

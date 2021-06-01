@@ -8,6 +8,8 @@
   <p>
     <span>User name:</span> {{user.username}}
   </p>
-  <button (click)="showDetails()">more details</button>
+<!--  <button (click)="showDetails()">more details</button>-->
+  <button><a [routerLink]="[user.id]">more details</a></button>
+
   <hr/>
 </div>

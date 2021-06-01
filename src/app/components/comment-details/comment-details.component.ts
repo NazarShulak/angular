@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IComment} from "../../models/IComment";
 import {ActivatedRoute, Router} from "@angular/router";
-import {CommentsService} from "../../services/comments.service";
+import {CommentService} from "../../services/comment.service";
 
 @Component({
   selector: 'app-comment-details',
@@ -12,7 +12,7 @@ export class CommentDetailsComponent implements OnInit {
 
   comment: IComment
 
-  constructor(private commentService: CommentsService, private activatedRoute: ActivatedRoute) {
+  constructor(private commentService: CommentService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params => {
       this.commentService.getComment(params.id).subscribe(value => this.comment = value);
     })

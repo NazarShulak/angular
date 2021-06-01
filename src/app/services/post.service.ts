@@ -6,7 +6,7 @@ import {IPost} from "../models/IPost";
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class PostService {
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private httpClient: HttpClient) {
