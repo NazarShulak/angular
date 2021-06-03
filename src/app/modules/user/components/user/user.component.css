@@ -1,3 +1,8 @@
 span{
   font-weight: bold;
 }
+button{
+  border-radius: 20px;
+  background: whitesmoke;
+  border-color: black;
+}
