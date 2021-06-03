@@ -16,11 +16,15 @@ import {PostResolver} from "./modules/post/services/post.resolver";
 
 let roots: Routes = [
   {
-    path: 'users', loadChildren:() =>import('./modules/user/user.module') , resolve: {data: UserResolver},
-    children: [{path: ':id', component: UserDetailsComponent}]
-  }, {
-    path: 'posts', component: PostsComponent, resolve: {data: PostResolver},
-    children: [{path: ':id', component: PostDetailsComponent}]
+    path: 'users',
+    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule),
+    resolve: {data: UserResolver}
+  },
+  {
+    path: 'posts',
+    loadChildren: () => import('./modules/post/post.module').then(m => m.PostModule),
+    resolve: {data: PostResolver}
+
   }
 ]
 
