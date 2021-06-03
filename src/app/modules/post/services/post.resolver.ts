@@ -7,8 +7,8 @@ import {
 import {Observable, of} from 'rxjs';
 import {environment} from "../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {UserInterface} from "../../user/modules/user.interface";
-import {PostInterface} from "../modules/post.interface";
+import {UserInterface} from "../../user/models/user.interface";
+import {PostInterface} from "../models/post.interface";
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,14 @@
 <div>
-    {{user.id}} -
-    {{user.name}} -
-    {{user.username}}
-  <button (click)="showDetails()">more details</button>
+  <p>
+    <span>id: </span>{{user.id}}
+  </p>
+  <p>
+    <span>name: </span>{{user.name}}
+  </p>
+  <p>
+    <span>user name: </span>{{user.username}}
+  </p>
+
+  <button (click)="showPosts()">show posts</button>
+  <hr>
 </div>

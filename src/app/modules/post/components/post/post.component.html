@@ -1,6 +1,13 @@
 <div>
-{{post.id}}
-{{post.userId}}
-{{post.title}}
-  <button (click)="showDetails()">more details</button>
+  <p>
+    <span>id: </span>{{post.id}}
+  </p>
+  <p>
+    <span>user id: </span>{{post.userId}}
+  </p>
+  <p>
+    <span>title: </span>{{post.title}}
+  </p>
+  <button (click)="showComments()">show comments</button>
+  <hr>
 </div>
