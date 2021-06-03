@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IUser} from "../../models/IUser";
+import {UserInterface} from "../../modules/user.interface";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -9,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UsersComponent implements OnInit {
 
-  users: IUser[];
+  users: UserInterface[];
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe(value => {

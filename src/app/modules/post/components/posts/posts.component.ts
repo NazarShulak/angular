@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IUser} from "../../models/IUser";
+import {UserInterface} from "../../../user/modules/user.interface";
 import {ActivatedRoute} from "@angular/router";
-import {IPost} from "../../models/IPost";
+import {PostInterface} from "../../modules/post.interface";
 
 @Component({
   selector: 'app-posts',
@@ -10,7 +10,7 @@ import {IPost} from "../../models/IPost";
 })
 export class PostsComponent implements OnInit {
 
-  posts: IPost[];
+  posts: PostInterface[];
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe(value => {
