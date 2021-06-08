@@ -1,0 +1,10 @@
+div>p{
+  font-weight: bold;
+}
+button{
+  border-radius: 5em;
+  border-color: silver;
+  background-color: whitesmoke;
+  font-weight: 5;
+  font-size: medium;
+}

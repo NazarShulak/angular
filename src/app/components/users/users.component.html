@@ -1,0 +1,3 @@
+<app-user *ngFor="let user of users" [user]="user" (userEmitter)="setUser($event)"></app-user>
+<hr>
+<app-user-details [user]="user"></app-user-details>
