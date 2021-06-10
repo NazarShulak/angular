@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CarsService} from "../../services/cars.service";
 import {CarInterface} from "../../models/car.interface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-car-form',
@@ -10,7 +11,7 @@ import {CarInterface} from "../../models/car.interface";
 })
 export class CarFormComponent implements OnInit {
 
-  model = new FormControl('');
+  model = new FormControl('',[]);
   price = new FormControl(0);
   year = new FormControl(0);
 
@@ -22,19 +23,22 @@ export class CarFormComponent implements OnInit {
   })
 
 
-  constructor(private carsService: CarsService) {
+  constructor(private carsService: CarsService,private router:Router) {
   }
 
   ngOnInit(): void {
-    console.log(this.cars.controls)
   }
 
-  addCarToDatabase() {
-    let car = {
-      model: this.cars.controls.model.value,
-      price: this.cars.controls.price.value,
-      year: this.cars.controls.year.value
-    }
-    this.carsService.postCar(car).subscribe(value => console.log(value))
+
+  save():void {
+    this.carsService.postCar(this.cars.value).subscribe(()=>{
+      this.router.navigate(['cars'])
+      let car = {
+        model: this.cars.controls.model.value,
+        price: this.cars.controls.price.value,
+        year: this.cars.controls.year.value
+      }
+      this.carsService.postCar(car);
+    })
   }
 }

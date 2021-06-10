@@ -8,7 +8,7 @@ import {CarInterface} from "../models/car.interface";
 })
 export class CarsService {
 
-  private url = 'http://192.168.88.253/api/v1/cars';
+  private url = 'http://92.253.239.109/api/v1/cars';
 
   constructor(private httpClient: HttpClient) {
   }

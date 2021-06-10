@@ -1,4 +1,4 @@
-<form [formGroup]="cars" (ngSubmit)="addCarToDatabase()">
+<form [formGroup]="cars" >
   <div>
     <label> model: </label>
     <input type="text" [formControl]="model">
@@ -9,6 +9,6 @@
     <label> year: </label>
     <input type="number" [formControl]="year">
 
-    <button>add</button>
+    <button (click)="save()">add</button>
   </div>
 </form>
